@@ -43,6 +43,21 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        'sistema'  => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_SIS_HOST', ''), //estabas poniendo el mismo valor de 'DB_HOST' en estos datos
+            'port' => env('DB_SIS_PORT', ''),
+            'database' => env('DB_SIS_DATABASE', ''),
+            'username' => env('DB_SIS_USERNAME', ''),
+            'password' => env('DB_SIS_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),

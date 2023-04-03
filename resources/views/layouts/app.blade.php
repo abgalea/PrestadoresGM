@@ -113,6 +113,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="https://grupomeldsalud.com.ar/assets/images/logo.png" rel="icon">
 
 </head>
 
@@ -125,15 +126,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
-
-                    <img src="assets/img/logo.png" />
+                <a class="navbar-brand">
+                    <img src="https://grupomeldsalud.com.ar/assets/images/logo.png" width="10%" alt="">
+                    Prestadores de Salud
                 </a>
 
             </div>
 
             <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">LOG ME OUT</a>
+                <a class="btn btn-danger pull-right" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    Salir
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+
             </div>
         </div>
     </div>
@@ -144,10 +155,10 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.html" class="menu-top-active">DASHBOARD</a></li>
+                            <li><a href="index.html" class="menu-top-active">Inicio</a></li>
 
-                            <li><a href="form.html">FORMS</a></li>
-                            <li>
+                            <li><a href="#">Consultas</a></li>
+                            {{-- <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">UI
                                     ELEMENTS <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
@@ -159,7 +170,7 @@
                             </li>
                             <li><a href="tab.html">TABS & PANELS</a></li>
                             <li><a href="table.html">TABLES</a></li>
-                            <li><a href="blank.html">BLANK PAGE</a></li>
+                            <li><a href="blank.html">BLANK PAGE</a></li> --}}
 
                         </ul>
                     </div>
@@ -171,7 +182,7 @@
     <!-- MENU SECTION END-->
     <div class="content-wrapper">
         <div class="container">
-                @yield('content')
+            @yield('content')
         </div>
     </div>
     <!-- CONTENT-WRAPPER SECTION END-->
