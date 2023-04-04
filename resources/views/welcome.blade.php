@@ -1,100 +1,92 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grupo MELD Salud - Sistema de consulta de afiliados</title>
 
-        <title>Laravel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://grupomeldsalud.com.ar/assets/images/logo.png" rel="icon">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Grupo MELD Salud</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {{-- <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div> --}}
+    </nav>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Bienvenidos al sistema de consulta de afiliados</h1>
+        <p class="lead">Ingrese el número de afiliado y consulte en línea los datos y coberturas de su paciente.</p>
+        {{-- <form>
+          <div class="form-group">
+            <label for="inputAfiliado">Número de afiliado</label>
+            <input type="text" class="form-control" id="inputAfiliado" placeholder="Ingrese el número de afiliado">
+          </div>
+          <button type="submit" class="btn btn-primary">Consultar</button>
+        </form> --}}
+      </div>
+    </div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+    <!-- Main content -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Beneficios del sistema de consulta de afiliados</h2>
+          <ul class="list-group">
+            <li class="list-group-item"><i class="fas fa-check-circle mr-2"></i>Consulta rápida y sencilla de datos de pacientes</li>
+            <li class="list-group-item"><i class="fas fa-check-circle mr-2"></i>Acceso en línea desde cualquier dispositivo con conexión a internet</li>
+            <li class="list-group-item"><i class="fas fa-check-circle mr-2"></i>Mejora la atención al paciente y agiliza los procesos administrativos</li>
+          </ul>
         </div>
-    </body>
+        <div class="col-md-6">
+          <img src="https://blog.hubspot.es/hubfs/media/marketingpublicidadmedico.jpeg" alt="Imagen ilustrativa" class="img-fluid">
+</div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>&copy; 2023 Grupo MELD Salud. Todos los derechos reservados.</p>
+      </div>
+      <div class="col-md-6 text-right">
+        <a href="#" class="text-light mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
 </html>
