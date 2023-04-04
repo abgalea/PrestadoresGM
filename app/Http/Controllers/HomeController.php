@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Ordenes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $cantidad = Ordenes::where('prestador', '=', Auth::id())->count();
+        $ordenes = Ordenes::where('prestador', '=', Auth::id())->get();
+
+        return view('home', ['ordenes'=>$ordenes, 'cantidad'=>$cantidad]);
     }
 }

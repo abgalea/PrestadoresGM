@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/orden', 'OrdenesController@buscar')->name('buscar');
+Route::post('/control', 'OrdenesController@control')->name('control');

@@ -31,35 +31,38 @@
         </div>
 
         <div class="panel panel-success">
-            <div class="panel-heading"> Afiliados Atendidos hoy </div>
+            <div class="panel-heading"> Afiliados Atendidos {{$cantidad}}</div>
             <div class="panel-body">
                 <table class="table table-striped" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Orden #</th>
+                            <th scope="col">DNI Afiliado</th>
+                            <th scope="col">Fecha Atención</th>
+                            <th scope="col">Médico</th>
+                            <th scope="col">En MELD?</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($ordenes as $item)
+
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row">{{$item->id}}</th>
+                            <td>{{$item->nro_doc}}</td>
+                            <td>{{$item->nombrePrestador}}</td>
+                            <td>{{date('d/m/y', strtotime($item->fechaPrestador))}}</td>
+                            <td>
+                                @if ($item->volvio)
+                                    SI
+                                @else
+                                    NO
+                                @endif
+                            </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+
+                        @endforeach
+
+
                     </tbody>
                 </table>
             </div>
