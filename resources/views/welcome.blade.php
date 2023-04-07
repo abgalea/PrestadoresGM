@@ -38,8 +38,9 @@
     <!-- Jumbotron -->
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">Bienvenidos al sistema de consulta de afiliados</h1>
-        <p class="lead">Ingrese el número de afiliado y consulte en línea los datos y coberturas de su paciente.</p>
+        <h1 class="display-4">Bienvenidos al sistema <br> PRESTADORES DEL GRUPO MELD</h1>
+        <p class="lead">Ingrese el número de ORDEN y consulte en línea los datos de su paciente y Orden.</p>
+        <a href="/login" class="btn btn-info btn-lg">Ingresar</a>
         {{-- <form>
           <div class="form-group">
             <label for="inputAfiliado">Número de afiliado</label>
@@ -54,7 +55,7 @@
     <div class="container my-5">
       <div class="row">
         <div class="col-md-6">
-          <h2>Beneficios del sistema de consulta de afiliados</h2>
+          <h2>Beneficios del sistema de Prestadores GM</h2>
           <ul class="list-group">
             <li class="list-group-item"><i class="fas fa-check-circle mr-2"></i>Consulta rápida y sencilla de datos de pacientes</li>
             <li class="list-group-item"><i class="fas fa-check-circle mr-2"></i>Acceso en línea desde cualquier dispositivo con conexión a internet</li>
