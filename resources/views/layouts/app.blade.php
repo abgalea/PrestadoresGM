@@ -111,6 +111,8 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- DATATABLE STYLE  -->
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="https://grupomeldsalud.com.ar/assets/images/logo.png" rel="icon">
@@ -128,7 +130,7 @@
                 </button>
                 <a class="navbar-brand">
                     <img src="https://grupomeldsalud.com.ar/assets/images/logo.png" width="10%" alt="">
-                    Prestadores de Salud
+                    Prestadores de Salud | {{Auth::user()->name}}
                 </a>
 
             </div>
@@ -199,11 +201,15 @@
     </section>
     <!-- FOOTER SECTION END-->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY  -->
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
-    <!-- CUSTOM SCRIPTS  -->
+    <!-- DATATABLE SCRIPTS  -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+      <!-- CUSTOM SCRIPTS  -->
     <script src="assets/js/custom.js"></script>
 
 </body>

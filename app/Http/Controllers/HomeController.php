@@ -23,11 +23,36 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $cantidad = Ordenes::where('prestador', '=', Auth::id())->count();
-        $ordenes = Ordenes::where('prestador', '=', Auth::id())->get();
 
-        return view('home', ['ordenes'=>$ordenes, 'cantidad'=>$cantidad]);
+        $desde = $request->get('desde');
+        $hasta = $request->get('hasta');
+
+        if ($desde == null) {
+            $desde = date('Y-m-01');
+        }
+        if ($hasta == null) {
+            $hasta = date('Y-m-30');
+        }
+
+        $ordenes = Ordenes::whereBetween('fechaPrestador', [$desde, $hasta])
+        ->where('prestador', '=', Auth::id())
+        ->get();
+        $ordenesAgrupadas = Ordenes::whereBetween('fechaPrestador', [$desde, $hasta])
+        ->where('prestador', '=', Auth::id())
+        ->groupBy('nro_doc')
+        ->pluck('nro_doc');
+
+        $cantidad = $ordenes->count();
+
+
+        return view('home', [
+            'ordenes'=>$ordenes,
+            'cantidad'=>$cantidad,
+            'desde'=>$desde,
+            'hasta'=>$hasta,
+            'ordenesAgrupadas'=>$ordenesAgrupadas->count()
+        ]);
     }
 }
